@@ -1,3 +1,7 @@
+body {
+    overflow:hidden
+}
+
 font-face{
     font-family: abster;
     src:url(font/abster.otf) format('otf');
@@ -12,7 +16,7 @@ font-face{
 .container{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(images/room.jpeg);
+    background: no-repeat linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(images/room.jpeg);
     background-size:cover;
 }
 
@@ -67,9 +71,16 @@ font-face{
 }
 
 .container .hero img{
-    margin-left: 30px;
     width: 400px;
+    margin-left: 30px;
     display: none;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+    
+}
+
+.container .hero img:hover{
+    width: 450px;
 }
 
 .container .hero h2{
@@ -109,10 +120,10 @@ font-face{
 
 .hidden-area .speakers .speaker_left {
     position: absolute;
-    top: 70px; 
-    left: 40px; 
-    width: 240px;
-    height: 170px;
+    top: 7.5vh; 
+    left: 2vw; 
+    width: 13vw;
+    height: 10vh;
     z-index: 1; 
     cursor: pointer; 
 }
@@ -157,5 +168,47 @@ font-face{
 }
 
 .hidden-area .desk:hover{
+    background-color: rgba(246, 255, 0, 0.099);
+}
+
+.hidden-area .Laptop {
+    position: absolute;
+    top: 320px;
+    left: 620px; 
+    width: 280px;
+    height: 190px;
+    z-index: 1; 
+    cursor: pointer;
+}
+
+.hidden-area .Laptop:hover{
+    background-color: rgba(246, 255, 0, 0.099);
+}
+
+.hidden-area .PC {
+    position: absolute;
+    top: 90px;
+    left: 1245px; 
+    width: 430px;
+    height: 370px;
+    z-index: 1; 
+    cursor: pointer;
+}
+
+.hidden-area .PC:hover{
+    background-color: rgba(246, 255, 0, 0.099);
+}
+
+.hidden-area .Chair {
+    position: absolute;
+    top: 850px;
+    left: 780px; 
+    width: 650px;
+    height: 370px;
+    z-index: 1; 
+    cursor: pointer;
+}
+
+.hidden-area .Chair:hover{
     background-color: rgba(246, 255, 0, 0.099);
 }

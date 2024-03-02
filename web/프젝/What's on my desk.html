@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's on my desk?</title>
     <link rel="stylesheet" href="style.css">
     <script>
@@ -21,7 +20,7 @@
             document.getElementById('images').src = "images/speakers.png";
             hidden.style.display = 'none';
             var container = document.querySelector('.container');
-            
+
             // 가이드 보이게 
             guide.style.display = 'block';
             images.style.display = 'block';
@@ -39,7 +38,7 @@
             document.getElementById('images').src = "images/Monitor.png";
             hidden.style.display = 'none';
             var container = document.querySelector('.container');
-            
+
             // 가이드 보이게 
             guide.style.display = 'block';
             images.style.display = 'block';
@@ -57,7 +56,7 @@
             document.getElementById('images').src = "images/Desk.png";
             hidden.style.display = 'none';
             var container = document.querySelector('.container');
-            
+
             // 가이드 보이게 
             guide.style.display = 'block';
             images.style.display = 'block';
@@ -72,10 +71,10 @@
         }
 
         function clickPC() {
-            document.getElementById('images').src = "images/Desk.png";
+            document.getElementById('images').src = "images/PC.png";
             hidden.style.display = 'none';
             var container = document.querySelector('.container');
-            
+
             // 가이드 보이게 
             guide.style.display = 'block';
             images.style.display = 'block';
@@ -84,8 +83,44 @@
             container.style.background = "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(images/room.jpeg)";
             container.style.backgroundSize = "cover";
 
-            document.getElementById('heading').innerText = "Desk";
-            document.getElementById('paragraph').innerText = "It's a Desk bought from Cupang. \n It's shakes a lot... Will be trashed soon..";
+            document.getElementById('heading').innerText = "PC";
+            document.getElementById('paragraph').innerText = "It's a self-assembled pc. \n It has 5600x CPU and 1660s GPU";
+            document.getElementById('button').innerText = "Pick Another Object";
+        }
+
+        function clickChair() {
+            document.getElementById('images').src = "images/Chair.png";
+            hidden.style.display = 'none';
+            var container = document.querySelector('.container');
+
+            // 가이드 보이게 
+            guide.style.display = 'block';
+            images.style.display = 'block';
+
+            // 배경 변경
+            container.style.background = "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(images/room.jpeg)";
+            container.style.backgroundSize = "cover";
+
+            document.getElementById('heading').innerText = "Chair";
+            document.getElementById('paragraph').innerText = "It's a Kneeling Chair. \n Super Comfortable,, Order right now.";
+            document.getElementById('button').innerText = "Pick Another Object";
+        }
+
+        function clickLaptop() {
+            document.getElementById('images').src = "images/Laptop.png";
+            hidden.style.display = 'none';
+            var container = document.querySelector('.container');
+
+            // 가이드 보이게 
+            guide.style.display = 'block';
+            images.style.display = 'block';
+
+            // 배경 변경
+            container.style.background = "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(images/room.jpeg)";
+            container.style.backgroundSize = "cover";
+
+            document.getElementById('heading').innerText = "Laptop";
+            document.getElementById('paragraph').innerText = "It's Macbook. \n I love apple.";
             document.getElementById('button').innerText = "Pick Another Object";
         }
     </script>
@@ -100,17 +135,17 @@
                 <ul>
                     <li><a href="#" onclick=clickDesk()>Desk</a></li>
                     <li><a href="#" onclick=clickMonitor()>Monitor</a></li>
-                    <li><a href="#">Chair</a></li>
-                    <li><a href="#">PC</a></li>
+                    <li><a href="#"onclick=clickChair()> Chair</a></li>
+                    <li><a href="#" onclick="clickPC()">PC</a></li>
                     <li><a href="#" onclick=clickSpeakers()>Speakers</a></li>
-                    <li><a href="#">Laptop</a></li>
-                    <li><a class="last_header" href="#">etc</a></li>
+                    <li><a href="#" onclick=clickLaptop()>Laptop</a></li>
+                    <li><a class="last_header" href="#">Show-All</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="hero" id="guide">
-            <img id= "images" src="images/speakers.png" alt="스피커 이미지">
+            <img id="images" src="images/speakers.png" alt="스피커 이미지">
             <h2 id="heading">What's On My Desk</h2>
             <p id="paragraph">Pick an objects for an information</p>
             <button id="button" onclick="adjustBackgroundGradient()">Pick An Object</button>
@@ -123,7 +158,12 @@
             </div>
             <div class="monitor" onclick="clickMonitor()"></div>
             <div class="desk" onclick="clickDesk()"></div>
-    </div>
+            <div class="Laptop" onclick="clickLaptop()"></div>
+            <div class="PC" onclick="clickPC()"></div>
+            <div class="Chair" onclick="clickChair()"></div>
+        </div>
+
+
 </body>
 
 </html>
