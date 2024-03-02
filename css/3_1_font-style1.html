@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            font-family: "Teko", sans-serif;
+        }
+
+        .title {
+            font-size: 28px;
+            color: rgb(0, 0, 255);
+        }
+
+        .content {
+            font-size: 19px;
+        }
+
+        .font_italic {
+            font-style: italic;
+        }
+
+        .font-weight-bold {
+            font-weight: bold;
+        }
+
+        .font-weight-300 {
+            font-weight: 300;
+        }
+
+        .font-variant {
+            font-variant: small-caps;
+        }
+        .subtitle-rem{
+            font-size: 2rem;
+        }
+        .subtitle-em{
+            font-size: 2em;
+        }
+        .article{
+            font-size: 10px;
+        }
+        .subtitle.vw{
+            font-size: 20vw;
+            height: 100px;
+            background-color: yellow;
+        }
+        .subtitle.vh{
+            font-size: 20px;
+            height: 20vh;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="title">코딩공부</h2>
+    <p class="content">코딩을 공부해보자</p>
+    <p class="content font_italic">코딩을 공부해보자</p>
+    <p class="content font-weight-bold">코딩을 공부해보자</p>
+    <p class="content font-weight-300">코딩을 공부해보자</p>
+    <p class="font-variant">HELLO, it changes to small-capital</p>
+    <hr />
+    <!-- 기본 -->
+    <h2>px</h2>
+    <p class="subtitle-px">코딩을 공부해보자</p>
+
+    <!-- 기본적으로 지정된 폰트 사이즈의 배수 -->
+    <h2>rem</h2> 
+    <p class="subtitle-rem">코딩을 공부해보자</p>
+
+    <!-- 부모 폰트 사이즈의 배수 -->
+    <h2>em</h2>
+    <div class="article">
+        <p class="subtitle-em">코딩을 공부해보자</p>
+    </div>
+
+    <hr />
+
+    <!-- viewport width %-->
+    <h2>vw</h2>
+    <p class="subtitle vw"></p>
+
+    <!-- viewport height %-->
+    <h2>vh</h2>
+    <p class="subtitle vh"></p>
+
+</body>
+
+</html>
