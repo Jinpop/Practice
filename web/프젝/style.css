@@ -1,0 +1,161 @@
+font-face{
+    font-family: abster;
+    src:url(font/abster.otf) format('otf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(images/room.jpeg);
+    background-size:cover;
+}
+
+.container .header{
+    width: 80%;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .header{
+    height: 70px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.container .header h1 a{
+    text-decoration: none;
+    color:white;
+    font-family: abster;
+    margin-left: 30px;
+}
+
+.container .nav ul li{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.container .nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.container .nav ul li a.last_header{
+    text-decoration: none;
+    color: white;
+    margin-right: 30px;
+}
+
+.container .nav ul li a:hover{
+    color: #1fdfdf;
+}
+
+.container .hero{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container .hero img{
+    margin-left: 30px;
+    width: 400px;
+    display: none;
+}
+
+.container .hero h2{
+    color: white;
+    font-size: 40px;
+    margin-bottom: 20px;
+    transition: all .4s;
+}
+
+.container .hero p{
+    color: white;
+    font-size: 22px; 
+    transition: all .4s;
+}
+
+.container .hero button{
+    background: none;
+    border: 2px solid rgb(54, 54, 54);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.container .hero button:hover{
+    background-color: rgba(96, 96, 96, 0.5);
+    padding: 15px 20px;
+}
+
+/* hidden area 정의 */
+
+.hidden-area{
+    display: none;
+}
+
+.hidden-area .speakers .speaker_left {
+    position: absolute;
+    top: 70px; 
+    left: 40px; 
+    width: 240px;
+    height: 170px;
+    z-index: 1; 
+    cursor: pointer; 
+}
+
+.hidden-area .speakers .speaker_right {
+    position: absolute;
+    top: 100px; 
+    left: 1110px; 
+    width: 115px;
+    height: 190px;
+    z-index: 1; 
+    cursor: pointer; 
+}
+
+.hidden-area .speakers:hover .speaker_right,
+.hidden-area .speakers:hover .speaker_left{
+    background-color: rgba(246, 255, 0, 0.099);
+}
+
+.hidden-area .monitor {
+    position: absolute;
+    top: 73px;
+    left: 487px; 
+    width: 459px;
+    height: 270px;
+    z-index: 1; 
+    cursor: pointer; 
+}
+
+.hidden-area .monitor:hover{
+    background-color: rgba(246, 255, 0, 0.099);
+}
+
+.hidden-area .desk {
+    position: absolute;
+    top: 480px;
+    left: 180px; 
+    width: 1200px;
+    height: 130px;
+    z-index: 1; 
+    cursor: pointer;
+}
+
+.hidden-area .desk:hover{
+    background-color: rgba(246, 255, 0, 0.099);
+}

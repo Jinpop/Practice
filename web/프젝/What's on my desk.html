@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's on my desk?</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function adjustBackgroundGradient() {
+            var container = document.querySelector('.container');
+            // guide 없어지게
+            guide.style.display = 'none';
+            hidden.style.display = 'block';
+            // 배경 변경
+            container.style.background = "linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),url(images/room.jpeg)";
+            container.style.backgroundSize = "cover";
+        }
+
+        function clickSpeakers() {
+            document.getElementById('images').src = "images/speakers.png";
+            hidden.style.display = 'none';
+            var container = document.querySelector('.container');
+            
+            // 가이드 보이게 
+            guide.style.display = 'block';
+            images.style.display = 'block';
+
+            // 배경 변경
+            container.style.background = "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(images/room.jpeg)";
+            container.style.backgroundSize = "cover";
+
+            document.getElementById('heading').innerText = "Speakers";
+            document.getElementById('paragraph').innerText = "They're KURZWEIL speaker. \n It has the ability to amplify the mid-range";
+            document.getElementById('button').innerText = "Pick Another Object";
+        }
+
+        function clickMonitor() {
+            document.getElementById('images').src = "images/Monitor.png";
+            hidden.style.display = 'none';
+            var container = document.querySelector('.container');
+            
+            // 가이드 보이게 
+            guide.style.display = 'block';
+            images.style.display = 'block';
+
+            // 배경 변경
+            container.style.background = "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(images/room.jpeg)";
+            container.style.backgroundSize = "cover";
+
+            document.getElementById('heading').innerText = "Monitor";
+            document.getElementById('paragraph').innerText = "It's a NewSync Monitor. \n It has 144Hz refresh rate and FHD resolution";
+            document.getElementById('button').innerText = "Pick Another Object";
+        }
+
+        function clickDesk() {
+            document.getElementById('images').src = "images/Desk.png";
+            hidden.style.display = 'none';
+            var container = document.querySelector('.container');
+            
+            // 가이드 보이게 
+            guide.style.display = 'block';
+            images.style.display = 'block';
+
+            // 배경 변경
+            container.style.background = "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(images/room.jpeg)";
+            container.style.backgroundSize = "cover";
+
+            document.getElementById('heading').innerText = "Desk";
+            document.getElementById('paragraph').innerText = "It's a Desk bought from Cupang. \n It's shakes a lot... Will be trashed soon..";
+            document.getElementById('button').innerText = "Pick Another Object";
+        }
+
+        function clickPC() {
+            document.getElementById('images').src = "images/Desk.png";
+            hidden.style.display = 'none';
+            var container = document.querySelector('.container');
+            
+            // 가이드 보이게 
+            guide.style.display = 'block';
+            images.style.display = 'block';
+
+            // 배경 변경
+            container.style.background = "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(images/room.jpeg)";
+            container.style.backgroundSize = "cover";
+
+            document.getElementById('heading').innerText = "Desk";
+            document.getElementById('paragraph').innerText = "It's a Desk bought from Cupang. \n It's shakes a lot... Will be trashed soon..";
+            document.getElementById('button').innerText = "Pick Another Object";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1><a href="#">Sungjin's Desk</a></h1>
+            <div class="nav">
+                <ul>
+                    <li><a href="#" onclick=clickDesk()>Desk</a></li>
+                    <li><a href="#" onclick=clickMonitor()>Monitor</a></li>
+                    <li><a href="#">Chair</a></li>
+                    <li><a href="#">PC</a></li>
+                    <li><a href="#" onclick=clickSpeakers()>Speakers</a></li>
+                    <li><a href="#">Laptop</a></li>
+                    <li><a class="last_header" href="#">etc</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="hero" id="guide">
+            <img id= "images" src="images/speakers.png" alt="스피커 이미지">
+            <h2 id="heading">What's On My Desk</h2>
+            <p id="paragraph">Pick an objects for an information</p>
+            <button id="button" onclick="adjustBackgroundGradient()">Pick An Object</button>
+        </div>
+
+        <div class="hidden-area" id="hidden">
+            <div class="speakers">
+                <div class="speaker_left" onclick="clickSpeakers()"></div>
+                <div class="speaker_right" onclick="clickSpeakers()"></div>
+            </div>
+            <div class="monitor" onclick="clickMonitor()"></div>
+            <div class="desk" onclick="clickDesk()"></div>
+    </div>
+</body>
+
+</html>
