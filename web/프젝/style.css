@@ -1,102 +1,101 @@
-body {
-    overflow:hidden
-}
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap');
 
-font-face{
-    font-family: abster;
-    src:url(font/abster.otf) format('otf');
-}
-
-*{
+/* 기본세팅 */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container{
-    width: 100%;
-    height: 100vh;
-    background: no-repeat linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(images/room.jpeg);
-    background-size:cover;
+body {
+    background-color: black;
+    font-family: 'Rokkitt', sans-serif;
+    font-style: 'normal';
 }
 
-.container .header{
-    width: 80%;
-    height: 80px;
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+/* 헤더 */
+.container .header {
+    background-color: rㅂgb(40, 40, 40);
+    width: 100%;
+    height: 70px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.container .header{
-    height: 70px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-}
-.container .header h1 a{
+.container .header h1 a {
     text-decoration: none;
-    color:white;
-    font-family: abster;
+    color: white;
+    font-family: Rokkitt;
     margin-left: 30px;
 }
 
-.container .nav ul li{
+.container .nav ul li {
     display: inline-block;
     margin: 0 10px;
 }
 
-.container .nav ul li a{
+.container .nav ul li a {
     text-decoration: none;
     color: white;
 }
 
-.container .nav ul li a.last_header{
+.container .nav ul li a#last_header {
     text-decoration: none;
-    color: white;
+    color: rgb(255, 127, 127);
     margin-right: 30px;
+    cursor: pointer;
 }
 
-.container .nav ul li a:hover{
+.container .nav ul li a:hover {
     color: #1fdfdf;
 }
 
-.container .hero{
+/* 가이드, 설명*/
+.container .hero {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.container .hero img{
+.container .hero img {
     width: 400px;
     margin-left: 30px;
     display: none;
     transition-duration: 0.4s;
     transition-timing-function: ease-out;
-    
 }
 
-.container .hero img:hover{
+.container .hero img:hover {
     width: 450px;
 }
 
-.container .hero h2{
+.container .hero h2 {
     color: white;
     font-size: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 5px;
     transition: all .4s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.container .hero p{
+.container .hero p {
     color: white;
-    font-size: 22px; 
+    font-size: 22px;
     transition: all .4s;
+    font-family: 'Rokkitt', sans-serif;
+    margin-bottom: 5px;
 }
 
-.container .hero button{
+.container .hero button {
     background: none;
     border: 2px solid rgb(54, 54, 54);
     color: white;
@@ -107,108 +106,77 @@ font-face{
     transition: all .4s;
 }
 
-.container .hero button:hover{
-    background-color: rgba(96, 96, 96, 0.5);
+.container .hero button:hover {
+    background-color: rgba(0, 220, 59, 0.5);
     padding: 15px 20px;
 }
 
-/* hidden area 정의 */
 
-.hidden-area{
+/* 이미지맵 */
+.backgroundroom {
+    opacity: 0.2;
+}
+
+map {
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* 리스트 */
+#list {
     display: none;
+    color: white;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    border: 3px white;
+    transition-duration: 0.5s;
+
 }
 
-.hidden-area .speakers .speaker_left {
-    position: absolute;
-    top: 7.5vh; 
-    left: 2vw; 
-    width: 13vw;
-    height: 10vh;
-    z-index: 1; 
-    cursor: pointer; 
+#list .row {
+    transition-duration: 0.5s;
+    justify-content: center;
+    align-items: center;
 }
 
-.hidden-area .speakers .speaker_right {
-    position: absolute;
-    top: 100px; 
-    left: 1110px; 
-    width: 115px;
-    height: 190px;
-    z-index: 1; 
-    cursor: pointer; 
+#list .box {
+    border: 3px solid white;
+    border-radius: 5%;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    transition-duration: 0.5s;
+    background-color: black;
+
+    animation: slideIn 0.5s ease-in-out;
 }
 
-.hidden-area .speakers:hover .speaker_right,
-.hidden-area .speakers:hover .speaker_left{
-    background-color: rgba(246, 255, 0, 0.099);
+#list h3 {
+    font-size: 25px;
+    transition-duration: 0.5s;
 }
 
-.hidden-area .monitor {
-    position: absolute;
-    top: 73px;
-    left: 487px; 
-    width: 459px;
-    height: 270px;
-    z-index: 1; 
-    cursor: pointer; 
+#list img {
+    border-radius: 10%;
+    border: 3px white;
+    transition-duration: 0.5s;
 }
 
-.hidden-area .monitor:hover{
-    background-color: rgba(246, 255, 0, 0.099);
+#list .box:hover {
+    transform: scale(1.2);
+    transition: transform 0.4s ease;
 }
 
-.hidden-area .desk {
-    position: absolute;
-    top: 480px;
-    left: 180px; 
-    width: 1200px;
-    height: 130px;
-    z-index: 1; 
-    cursor: pointer;
-}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
 
-.hidden-area .desk:hover{
-    background-color: rgba(246, 255, 0, 0.099);
-}
-
-.hidden-area .Laptop {
-    position: absolute;
-    top: 320px;
-    left: 620px; 
-    width: 280px;
-    height: 190px;
-    z-index: 1; 
-    cursor: pointer;
-}
-
-.hidden-area .Laptop:hover{
-    background-color: rgba(246, 255, 0, 0.099);
-}
-
-.hidden-area .PC {
-    position: absolute;
-    top: 90px;
-    left: 1245px; 
-    width: 430px;
-    height: 370px;
-    z-index: 1; 
-    cursor: pointer;
-}
-
-.hidden-area .PC:hover{
-    background-color: rgba(246, 255, 0, 0.099);
-}
-
-.hidden-area .Chair {
-    position: absolute;
-    top: 850px;
-    left: 780px; 
-    width: 650px;
-    height: 370px;
-    z-index: 1; 
-    cursor: pointer;
-}
-
-.hidden-area .Chair:hover{
-    background-color: rgba(246, 255, 0, 0.099);
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
