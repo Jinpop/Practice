@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById("root");
+
+        function App() {
+            const [amount, setAmount] = React.useState(0);
+            const [flipped, setFlipped] = React.useState(false);
+            const onChange = (event) => setAmount(event.target.value);
+            const reset = () => setAmount(0);
+            const flip = () => {
+                reset();
+                setFlipped(current => !current);
+            }
+            return (
+                <div>
+                    <h1 className="hi">Super Converter</h1>
+                    <div>
+                        <label htmlFor="minutes">minutes</label>
+                        <input
+                            value={flipped ? amount * 60 : amount}
+                            id="minutes"
+                            placeholder="Minutes"
+                            type="number"
+                            onChange={onChange}
+                            disabled={flipped}
+                        />
+                        <h3>You want to convert {amount}</h3>
+                    </div>
+                    <div>
+                        <label htmlFor="hours">Hours</label>
+                        <input
+                            disabled={!flipped}
+                            value={flipped ? amount : Math.round(amount / 60)}
+                            id="hours"
+                            placeholder="Hours"
+                            type="number"
+                            onChange={onChange}
+                        />
+                    </div>
+                    <button onClick={reset}>Reset</button>
+                    <button onClick={flip}>Flip</button>
+                </div>
+            );
+        }
+
+        function render() {
+            ReactDOM.render(<App />, root);
+        }
+
+        render();
+    </script>
+</body>
+
+</html>
